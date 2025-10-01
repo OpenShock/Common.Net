@@ -1,14 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../Framework.props" />
-  <Import Project="../Shared.props" />
-
   <ItemGroup>
-    <PackageReference Include="Testcontainers.PostgreSql" Version="4.7.0" />
-    <PackageReference Include="Bogus" Version="35.6.3" />
-    <PackageReference Include="TUnit" Version="0.61.13" />
+    <ProjectReference Include="..\DynamicLinq\DynamicLinq.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DynamicLinq\DynamicLinq.csproj" />
+    <PackageReference Include="Testcontainers.PostgreSql" />
+    <PackageReference Include="Bogus" />
+    <PackageReference Include="TUnit" />
   </ItemGroup>
 </Project>
