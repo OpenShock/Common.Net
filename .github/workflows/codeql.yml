@@ -46,7 +46,6 @@ jobs:
       run: |
         dotnet restore
         dotnet publish Common/Common.csproj -c Release
-        dotnet publish Common.ASPNET/Common.ASPNET.csproj -c Release
         dotnet publish DynamicLinq/DynamicLinq.csproj -c Release
 
     - name: Perform CodeQL Analysis
