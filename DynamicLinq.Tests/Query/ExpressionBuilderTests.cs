@@ -1,8 +1,7 @@
 ﻿using Bogus;
 using OpenShock.DynamicLinq.Query;
-using TUnit.Assertions.AssertConditions.Throws;
 
-namespace OpenShock.Common.EFCore.Tests.Query;
+namespace OpenShock.DynamicLinq.Tests.Query;
 
 public class ExpressionBuilderTests
 {
