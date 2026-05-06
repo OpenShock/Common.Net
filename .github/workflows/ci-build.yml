@@ -19,23 +19,23 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           fetch-depth: 0
           
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v4.4.2
+        uses: gittools/actions/gitversion/setup@bc6623af8fc07d5a8903052dd46da33403eec8e8  # v4.5.0
         with:
           versionSpec: '6.3.x'
           
       - name: Determine Version
         id: version_step
-        uses: gittools/actions/gitversion/execute@v4.4.2
+        uses: gittools/actions/gitversion/execute@bc6623af8fc07d5a8903052dd46da33403eec8e8  # v4.5.0
         with:
           updateProjectFiles: true
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7  # v5.2.0
         with:
           dotnet-version: '9.0.x'
       
