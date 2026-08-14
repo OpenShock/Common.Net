@@ -5,10 +5,10 @@ namespace OpenShock.Internal.Common.Utils;
 
 public static class OsTask
 {
-    public static Task Run(Func<Task> function, [CallerFilePath] string path = "",
+    public static Task Run(Func<Task?> function, CancellationToken token = default, [CallerFilePath] string path = "",
         [CallerMemberName] string member = "", [CallerLineNumber] int line = -1)
     {
-        var task = Task.Run(function);
+        var task = Task.Run(function, token);
         task.ContinueWith(t => ErrorHandleTask(path, member, line, t), TaskContinuationOptions.OnlyOnFaulted);
         return task;
     }
@@ -21,10 +21,10 @@ public static class OsTask
             file, member, line, t.Exception?.StackTrace);
     }
 
-    public static Task Run(Task function, [CallerFilePath] string path = "",
+    public static Task Run(Task function, CancellationToken token = default, [CallerFilePath] string path = "",
         [CallerMemberName] string member = "", [CallerLineNumber] int line = -1)
     {
-        var task = Task.Run(() => function);
+        var task = Task.Run(() => function, token);
         task.ContinueWith(
             t => ErrorHandleTask(path, member, line, t), TaskContinuationOptions.OnlyOnFaulted);
         return task;
